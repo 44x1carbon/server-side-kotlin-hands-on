@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/server-side-kotlin-hands-on.iml" filepath="$PROJECT_DIR$/.idea/modules/server-side-kotlin-hands-on.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server-side-kotlin-hands-on_main.iml" filepath="$PROJECT_DIR$/.idea/modules/server-side-kotlin-hands-on_main.iml" group="server-side-kotlin-hands-on" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server-side-kotlin-hands-on_test.iml" filepath="$PROJECT_DIR$/.idea/modules/server-side-kotlin-hands-on_test.iml" group="server-side-kotlin-hands-on" />
     </modules>
   </component>
 </project>

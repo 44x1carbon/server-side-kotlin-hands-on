@@ -18,5 +18,9 @@
         <processorPath useClasspath="true" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="server-side-kotlin-hands-on_main" target="1.8" />
+      <module name="server-side-kotlin-hands-on_test" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
