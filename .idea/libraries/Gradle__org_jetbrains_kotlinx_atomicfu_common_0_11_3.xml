@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: org.jetbrains.kotlinx:atomicfu-common:0.11.3">
+  <library name="Gradle: org.jetbrains.kotlinx:atomicfu-common:0.11.3" type="kotlin.common">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/atomicfu-common/0.11.3/8f4a66dcd4f0413f828b4df51e736918e05dbd1e/atomicfu-common-0.11.3.jar!/" />
     </CLASSES>

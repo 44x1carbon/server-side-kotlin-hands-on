@@ -2,8 +2,11 @@
   <library name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-io-jvm:0.1.0-alpha-4">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/Could not find org.jetbrains.kotlinx:kotlinx-coroutines-io-jvm:0.1.0-alpha-4." />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-io-jvm/0.1.0-alpha-4/300fe330418af9c9d6046dbdc8b1c8fc29c43e31/kotlinx-coroutines-io-jvm-0.1.0-alpha-4.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-io-jvm/0.1.0-alpha-4/5d8eab414807106fcff1a7546aeff716d0401662/kotlinx-coroutines-io-jvm-0.1.0-alpha-4-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>
