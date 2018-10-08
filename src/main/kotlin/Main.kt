@@ -8,6 +8,8 @@ import io.ktor.http.Parameters
 import io.ktor.response.*
 import io.ktor.routing.*
 
+data class NewTaskParam(val name: String)
+
 fun Application.main() {
     install(ContentNegotiation) {
         gson {}
