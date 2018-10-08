@@ -49,4 +49,19 @@ class ApplicationTest {
         assertEquals(HttpStatusCode.OK, request1.response.status())
         assertEquals(4.toString(), request1.response.content)
     }
+
+    @Test fun `タスクを完了に`() = withTestApplication(Application::main) {
+
+        val request1 = handleRequest(HttpMethod.Put, "/tasks/1/done") {
+            addHeader(HttpHeaders.ContentType, ContentType.Application.Json.toString())
+            setBody("""
+                {
+                    "done": true
+                }
+            """.trimIndent())
+        }
+
+        assertEquals(HttpStatusCode.OK, request1.response.status())
+    }
+
 }

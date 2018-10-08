@@ -11,6 +11,7 @@ import io.ktor.response.*
 import io.ktor.routing.*
 
 data class NewTaskParam(val name: String)
+data class DoneTaskParam(val done: Boolean)
 
 fun Application.main() {
     install(ContentNegotiation) {
@@ -50,5 +51,22 @@ fun Application.main() {
 
             call.respond(HttpStatusCode.OK, newId)
         }
+
+        put("/tasks/{id}/done") {
+            val doneTaskParam: DoneTaskParam = call.receive<DoneTaskParam>()
+            val id: Long? = call.parameters["id"]?.toLong()
+
+            val index: Int = taskList.indexOfFirst { it.id == id }
+
+            if (index == -1) {
+                call.respond(HttpStatusCode.NotFound)
+                return@put
+            }
+
+            taskList[index] = taskList[index].copy(done = doneTaskParam.done)
+
+            call.respond(HttpStatusCode.OK)
+        }
+
     }
 }
