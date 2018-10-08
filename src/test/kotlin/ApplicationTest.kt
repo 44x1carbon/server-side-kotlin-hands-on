@@ -34,4 +34,19 @@ class ApplicationTest {
                 Task(2, "タスク2", false)
         )), request3.response.content)
     }
+
+    @Test fun `タスクの作成`() = withTestApplication(Application::main) {
+
+        val request1 = handleRequest(HttpMethod.Post, "/tasks") {
+            addHeader(HttpHeaders.ContentType, ContentType.Application.Json.toString())
+            setBody("""
+                {
+                    "name": "タスク4"
+                }
+            """.trimIndent())
+        }
+
+        assertEquals(HttpStatusCode.Created, request1.response.status())
+        assertEquals(4.toString(), request1.response.content)
+    }
 }
