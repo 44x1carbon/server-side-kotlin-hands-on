@@ -4,6 +4,7 @@ import io.ktor.application.*
 import io.ktor.features.ContentNegotiation
 import io.ktor.gson.gson
 import io.ktor.http.ContentType
+import io.ktor.http.HttpStatusCode
 import io.ktor.http.Parameters
 import io.ktor.request.receive
 import io.ktor.response.*
@@ -42,6 +43,12 @@ fun Application.main() {
 
         post("/tasks") {
             val taskParam: NewTaskParam = call.receive<NewTaskParam>()
+            val newId: Long = taskList.mapNotNull { task -> task.id }.max()?.plus(1) ?: 0
+            val task: Task = Task(newId, taskParam.name, false)
+
+            taskList.add(task)
+
+            call.respond(HttpStatusCode.OK, newId)
         }
     }
 }
