@@ -30,6 +30,7 @@ fun Application.main() {
 
             val response: List<Task> = when(done) {
                 "true" -> taskList.filter { it.done }
+                "false" -> taskList.filterNot { it.done }
                 else -> taskList
             }
 
