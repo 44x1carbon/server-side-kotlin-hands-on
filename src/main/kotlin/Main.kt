@@ -4,6 +4,7 @@ import io.ktor.application.*
 import io.ktor.features.ContentNegotiation
 import io.ktor.gson.gson
 import io.ktor.http.ContentType
+import io.ktor.http.Parameters
 import io.ktor.response.*
 import io.ktor.routing.*
 
@@ -24,7 +25,15 @@ fun Application.main() {
         }
 
         get("/tasks") {
-            call.respond(taskList)
+            val queryParameters: Parameters = call.request.queryParameters
+            val done: String? = queryParameters["done"]
+
+            val response: List<Task> = when(done) {
+                "true" -> taskList.filter { it.done }
+                else -> taskList
+            }
+
+            call.respond(response)
         }
     }
 }
