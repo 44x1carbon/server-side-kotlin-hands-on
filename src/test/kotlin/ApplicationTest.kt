@@ -46,7 +46,7 @@ class ApplicationTest {
             """.trimIndent())
         }
 
-        assertEquals(HttpStatusCode.Created, request1.response.status())
+        assertEquals(HttpStatusCode.OK, request1.response.status())
         assertEquals(4.toString(), request1.response.content)
     }
 }
