@@ -25,5 +25,13 @@ class ApplicationTest {
         assertEquals(gsonBuilder.toJson(listOf(
                 Task(3, "タスク3", true)
         )), request2.response.content)
+
+        val request3 = handleRequest(HttpMethod.Get, "/tasks?done=false")
+
+        assertEquals(HttpStatusCode.OK, request3.response.status())
+        assertEquals(gsonBuilder.toJson(listOf(
+                Task(1, "タスク1", false),
+                Task(2, "タスク2", false)
+        )), request3.response.content)
     }
 }
