@@ -5,6 +5,7 @@ import io.ktor.features.ContentNegotiation
 import io.ktor.gson.gson
 import io.ktor.http.ContentType
 import io.ktor.http.Parameters
+import io.ktor.request.receive
 import io.ktor.response.*
 import io.ktor.routing.*
 
@@ -37,6 +38,10 @@ fun Application.main() {
             }
 
             call.respond(response)
+        }
+
+        post("/tasks") {
+            val taskParam: NewTaskParam = call.receive<NewTaskParam>()
         }
     }
 }
