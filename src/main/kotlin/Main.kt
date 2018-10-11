@@ -52,7 +52,7 @@ fun Application.main() {
             call.respond(HttpStatusCode.OK, newId)
         }
 
-        put("/tasks/{id}/done") {
+        patch("/tasks/{id}/done") {
             val doneTaskParam: DoneTaskParam = call.receive<DoneTaskParam>()
             val id: Long? = call.parameters["id"]?.toLong()
 
@@ -60,7 +60,7 @@ fun Application.main() {
 
             if (index == -1) {
                 call.respond(HttpStatusCode.NotFound)
-                return@put
+                return@patch
             }
 
             taskList[index] = taskList[index].copy(done = doneTaskParam.done)

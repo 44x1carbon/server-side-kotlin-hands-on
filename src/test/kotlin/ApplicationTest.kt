@@ -52,7 +52,7 @@ class ApplicationTest {
 
     @Test fun `タスクを完了に`() = withTestApplication(Application::main) {
 
-        val request1 = handleRequest(HttpMethod.Put, "/tasks/1/done") {
+        val request1 = handleRequest(HttpMethod.Patch, "/tasks/1/done") {
             addHeader(HttpHeaders.ContentType, ContentType.Application.Json.toString())
             setBody("""
                 {
